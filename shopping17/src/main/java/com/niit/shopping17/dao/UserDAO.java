@@ -6,15 +6,15 @@ import org.springframework.stereotype.Repository;
 public class UserDAO {
 	public boolean isValidUser(String userName,String password)
 	{
-		System.out.println("Inside DAO");
+		System.out.println("Inside UserDAO");
 		if(userName.equals("NIIT") && password.equals("NIIT@123"))
 		{
-			System.out.println("True");
+			System.out.println("UserDAOTrue");
 			return true;
 		}
 		else
 		{
-			System.out.println("False");
+			System.out.println("UserDAOFalse");
 			return false;
 		}
 	}

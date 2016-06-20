@@ -3,6 +3,7 @@
 	<name>shopping17</name>
 	<comment></comment>
 	<projects>
+		<project>shoppingc</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

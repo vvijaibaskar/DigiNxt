@@ -8,12 +8,13 @@
 <title>Shopping Cart</title>
 </head>
 <body>
+
 <form:form action="isValidUser" method="post">
 Enter User Name:<input type="text" name="name">
 <br/>
 Enter Password:<input type="password" name="password" />
 <br />
-<input type="submit">
+<input type="submit" value = "Login" >
 </form:form>
 
 </body>

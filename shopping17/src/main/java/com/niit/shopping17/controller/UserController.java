@@ -18,24 +18,22 @@ public class UserController {
 	   public ModelAndView showmessage(@RequestParam(value="name") String name,
 	    @RequestParam(value="password") String password)
 	   	   {
-	        System.out.println(" Inside User Controller");
+			System.out.println("in User controller");
 	    	String message;
+	    	ModelAndView mv;
 	    	if(userDAO.isValidUser(name,password))
 	    	{
 	    		message="Valid Credentials";
-	        	ModelAndView mv = new ModelAndView("Success");
-	 	 	   mv.addObject("message",message);
-	 	 	   mv.addObject("name",name);
-		 	   return mv;
-	 		    	}
+	            mv = new ModelAndView("adminHome");
+	     	}
 	    	else
 	    	{
 	    		message="Invalid Credentials";
-	        	ModelAndView mv = new ModelAndView("False");
+	        	mv = new ModelAndView("login");
+	 		}
 	 	 	   mv.addObject("message",message);
 	 	 	   mv.addObject("name",name);
 		 	   return mv;
-	 		    	}
 	 		    
 	    }
 }

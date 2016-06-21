@@ -30,27 +30,17 @@ public class CategoryController {
 
 	@RequestMapping("/getAllCategories")
 	public ModelAndView getAllCategories() {
-
-		System.out.println("before categoryDAO.AllCategories");
-
 		List<Category> categoryList = categoryDAO.getAllCategories();
-		System.out.println("before ModelAndView-CategoryList");
-
 		ModelAndView mv = new ModelAndView("/categoryList");
 		mv.addObject("categoryList", categoryList);
-
 		return mv;
 	}
 
 	@RequestMapping("/updateCategories")
 	public ModelAndView updateCategory(@ModelAttribute("category") ArrayList<Category> categories) {
 		int count = categoryDAO.updateCategories(categories);
-
-		System.out.println("updating category");
 		ModelAndView mv = new ModelAndView("/categoryList");
-
 		String message = count + " record(s) are updated";
-
 		List<Category> categoryList = categoryDAO.getAllCategories();
 		mv.addObject("message", message);
 		mv.addObject("categoryList", categoryList);

@@ -14,7 +14,6 @@ public class CategoryDAO {
 		public List<Category> getAllCategories(){
 			ArrayList<Category> list = new ArrayList<Category>();
 		
-		System.out.println("Inside CategoryDAO");
 		Category c1= new Category();
 		c1.setId("C_MOB_01");
 		c1.setName("Mobile");
@@ -40,7 +39,6 @@ public class CategoryDAO {
 	}
 	public int updateCategories(List<Category> categoryList)
 	{
-		System.out.println("Inside updateCategories");
 		return 1;
 	}
 	

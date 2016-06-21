@@ -18,7 +18,6 @@ public class UserController {
 	   public ModelAndView showmessage(@RequestParam(value="name") String name,
 	    @RequestParam(value="password") String password)
 	   	   {
-			System.out.println("in User controller");
 	    	String message;
 	    	ModelAndView mv;
 	    	if(userDAO.isValidUser(name,password))

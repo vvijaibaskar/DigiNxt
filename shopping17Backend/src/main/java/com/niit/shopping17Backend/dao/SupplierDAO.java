@@ -15,6 +15,7 @@ public interface SupplierDAO {
 	public void saveOrUpdate(Supplier supplier);
 
 	public void delete(String id);
-
+	/* vijai */
+	public Supplier getAllSuppliers(String id);
 
 }

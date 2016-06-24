@@ -34,7 +34,8 @@ public class TestCategory {
 	{
 		CategoryDAO  categoryDAO =  (CategoryDAO) context.getBean("categoryDAO");
 		Category category = (Category) context.getBean("category");
-		category = (Category)categoryDAO.get(id);
+		category = categoryDAO.get(id);
+		System.out.println(category);
 	    category.setDescription(desc);
 		categoryDAO.saveOrUpdate(category);
 
@@ -60,8 +61,9 @@ public class TestCategory {
 	    category.setName("Mobile");
 	    category.setDescription("Apple iphone Mobile Phone");
 	    tc.createCategory(category);
-/* 	    tc.updateCategory("TAB_001","Samsung Tablet"); */
-		
+/* 	    tc.updateCategory("MOB_001","Samsung Tablet"); */ 
+ 	    
+	
 	}
 
 	private static void display(List<Category> list) {

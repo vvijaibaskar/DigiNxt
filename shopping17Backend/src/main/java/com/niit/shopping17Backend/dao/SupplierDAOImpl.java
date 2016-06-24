@@ -60,6 +60,13 @@ public class SupplierDAOImpl implements SupplierDAO {
 		
 		return null;
 	}
+	@Transactional
+	public Supplier getAllSuppliers(String id)
+	{
+		return null;
+		
+	}
+
 
 
 }

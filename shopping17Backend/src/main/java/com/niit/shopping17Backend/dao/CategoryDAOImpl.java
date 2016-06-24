@@ -49,15 +49,20 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Transactional
 	public Category get(String id) {
 		String hql = "from Category where id=" + id;
+		System.out.println("Inside get1");;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		System.out.println(query);;
 		
+		System.out.println("Inside get2");;
 		@SuppressWarnings("unchecked")
 		List<Category> listCategory = (List<Category>) query.list();
+		for(Category c:listCategory){
+			System.out.println(c);
+		}
 		
 		if (listCategory != null && !listCategory.isEmpty()) {
 			return listCategory.get(0);
 		}
-		
 		return null;
 	}
 

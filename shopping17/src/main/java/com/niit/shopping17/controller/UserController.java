@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.shopping17.dao.UserDAO;
+import com.niit.shopping17Backend.dao.UserDAO;
+
 
 
 @Controller
@@ -18,9 +19,10 @@ public class UserController {
 	   public ModelAndView showmessage(@RequestParam(value="name") String name,
 	    @RequestParam(value="password") String password)
 	   	   {
+			System.out.println("in User controller");
 	    	String message;
 	    	ModelAndView mv;
-	    	if(userDAO.isValidUser(name,password))
+	    	if(userDAO.isValidUser(name,password,true))
 	    	{
 	    		message="Valid Credentials";
 	            mv = new ModelAndView("adminHome");

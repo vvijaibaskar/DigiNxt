@@ -92,15 +92,23 @@
 				<td><form:label path="supplier">
 						<spring:message text="Supplier" />
 					</form:label></td>
-				<td><form:input path="supplier.name" required="true" /></td>
+				<td><form:select path="supplier.name" items="${supplierList}"
+				    itemvalue="name" itemLabel="name" /></td>
 			</tr>
-			<tr>
+	   	<p>
+				    ${name}
+		   </p>
+		   		<tr>
 				<td><form:label path="category">
 						<spring:message text="Category" />
 					</form:label></td>
-				<td><form:input path="category.name" required="true" /></td>
+				<td><form:select path="category.name" items="${categoryList}"
+				    itemvalue="name" itemLabel="name" /></td>
 			</tr>
-			<tr>
+		    <p>
+				    ${name}
+		   </p>
+					<tr>
 				<td colspan="2"><c:if test="${!empty product.name}">
 						<input type="submit"
 							value="<spring:message text="Edit Product"/>" />

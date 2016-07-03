@@ -35,8 +35,10 @@ public class ProductDAOImp implements ProductDAO {
 
 	@Transactional
 	public void saveOrUpdate(Product product) {
-		sessionFactory.getCurrentSession().saveOrUpdate(product);
-	}
+		System.out.println("Inside productDAO before saveOrUpdate");
+	sessionFactory.getCurrentSession().saveOrUpdate(product);
+	     System.out.println("Inside productDAO After saveOrUpdate");
+}
 
 	@Transactional
 	public void delete(String id) {
@@ -49,7 +51,7 @@ public class ProductDAOImp implements ProductDAO {
 	public Product get(String id) {
 		String hql = "from Product where id='" + id+"'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
-		
+		System.out.println("Inside productDAO get");
 		@SuppressWarnings("unchecked")
 		List<Product> listProduct = (List<Product>) query.list();
 		

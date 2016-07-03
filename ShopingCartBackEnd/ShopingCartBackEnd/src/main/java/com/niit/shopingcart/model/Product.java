@@ -1,5 +1,6 @@
 package com.niit.shopingcart.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -38,12 +39,12 @@ public class Product {
  
 	
 	@ManyToOne
-    @JoinColumn(name="category_id", nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name="category_id",referencedColumnName="id",  nullable = false, updatable = false, insertable = false)
 	private Category category;
 	
 	
 	@ManyToOne
-    @JoinColumn(name="supplier_id",nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name="supplier_id", nullable = false, updatable = false, insertable = false)
 	private Supplier supplier;
 
 	public String getId() {

@@ -1,17 +1,9 @@
 package com.niit.shopingcart.test;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.dao.ProductDAO;
-import com.niit.shopingcart.dao.SupplierDAO;
-import com.niit.shopingcart.model.Category;
 import com.niit.shopingcart.model.Product;
-import com.niit.shopingcart.model.Supplier;
 
 public class ProductTest {
 	
@@ -27,24 +19,22 @@ public class ProductTest {
 		
 	  
 	    p.setId("PRD_001");
-	    p.setName("PRD001");
-	    p.setDescription("This is PRD001");
-	    p.setPrice(2000);
-	    
-	//    p.setCategoryID("HK-001");
-	//    p.setSupplierID("SUP-001");
+	    p.setName("Samsung");
+	    p.setDescription("This is Mobile");
+	    p.setPrice(8000);
+	    p.setCategory_id("CAT_001");
+	    p.setSupplier_id("SUP_001");
 	    
 	    ProductDAO productDAO = (ProductDAO)context.getBean("productDAO");
 	    productDAO.saveOrUpdate(p);
 		
 	    p.setId("PRD_002");
-	    p.setName("PRD002");
-	    p.setDescription("This is PRD002");
-	    p.setPrice(2000);
-	    
-//	    p.setCategoryID("HK-001");
-//	    p.setSupplierID("SUP-001");
-	    
+	    p.setName("Apple");
+	    p.setDescription("This is iPhone");
+	    p.setPrice(10000);
+	    p.setCategory_id("CAT_002");
+	    p.setSupplier_id("SUP_002");
+		    
 	    productDAO.saveOrUpdate(p);
 		
 	}

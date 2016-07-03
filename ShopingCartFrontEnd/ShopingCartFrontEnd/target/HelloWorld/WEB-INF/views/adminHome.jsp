@@ -10,9 +10,9 @@
 
 <h4>Welcome Admin </h4> <br><br>
 
-<a href="getAllcategories"> Categories </a>   <br>
+<a href="categories"> Categories </a>   <br>
 <a href="suppliers"> Suppliers</a>   <br>
-<a href="getAllproducts"> Products</a>    <br>
+<a href="products"> Products</a>    <br>
 
 </body>
 </html>

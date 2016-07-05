@@ -66,53 +66,45 @@
 					</c:otherwise>
 				</c:choose>
 			<tr>
-			<form:input path="id" hidden="true"  />
+				<form:input path="id" hidden="true" />
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>
 				<td><form:input path="name" required="true" /></td>
 			</tr>
-			
-			
+
+
 			<tr>
 				<td><form:label path="price">
 						<spring:message text="Price" />
 					</form:label></td>
 				<td><form:input path="price" required="true" /></td>
 			</tr>
-			
+
 			<tr>
 				<td><form:label path="description">
 						<spring:message text="Description" />
 					</form:label></td>
 				<td><form:input path="description" required="true" /></td>
 			</tr>
-			
+
 			<tr>
 				<td><form:label path="supplier">
 						<spring:message text="Supplier" />
 					</form:label></td>
-				
-				<td><form:select path="supplier.name" items="${supplierList}"
-				    itemvalue="name" itemLabel="name" /></td>
-		<%--
-				<td><form:select path="supplier.id" items="${supplierList}"
-				    itemvalue="id" itemLabel="id" /></td>
-		 --%>
-		 	</tr>
-		   		<tr>
+				<%-- <td><form:input path="supplier.name" required="true" /></td> --%>
+				 <td><form:select path="supplier.name" items="${supplierList}" itemValue="name" itemLabel="name" /></td>
+			</tr>
+			
+			<tr>
 				<td><form:label path="category">
 						<spring:message text="Category" />
 					</form:label></td>
+				<%-- <td><form:input path="category.name" required="true" /></td> --%>
+				<td><form:select path="category.name" items="${categoryList}" itemValue="name" itemLabel="name" /></td>
+			</tr>
 			
-				<td><form:select path="category.name" items="${categoryList}"
-				    itemvalue="name" itemLabel="name" /></td>
-		<%--	
-				<td><form:select path="category.id" items="${categoryList}"
-				    itemvalue="id" itemLabel="id" /></td>
-		  --%>
-				    	    </tr>
-					<tr>
+			<tr>
 				<td colspan="2"><c:if test="${!empty product.name}">
 						<input type="submit"
 							value="<spring:message text="Edit Product"/>" />

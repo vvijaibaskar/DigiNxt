@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+
+
 import com.niit.shopingcart.model.Product;
 
 @Repository("productDAO")
@@ -35,9 +37,7 @@ public class ProductDAOImp implements ProductDAO {
 
 	@Transactional
 	public void saveOrUpdate(Product product) {
-		System.out.println("Inside productDAO before saveOrUpdate");
 	sessionFactory.getCurrentSession().saveOrUpdate(product);
-	     System.out.println("Inside productDAO After saveOrUpdate");
 }
 
 	@Transactional

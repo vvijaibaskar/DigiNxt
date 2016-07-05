@@ -39,7 +39,7 @@ public class Product {
  
 	
 	@ManyToOne
-    @JoinColumn(name="category_id",referencedColumnName="id",  nullable = false, updatable = false, insertable = false)
+    @JoinColumn(name="category_id",  nullable = false, updatable = false, insertable = false)
 	private Category category;
 	
 	

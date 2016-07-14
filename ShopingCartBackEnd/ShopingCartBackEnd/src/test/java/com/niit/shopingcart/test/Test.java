@@ -37,8 +37,8 @@ public class Test {
 		Test t = new Test();
 		
 		User user =(User)  context.getBean("user");
-		user.setId("NIIT");
-		user.setPassword("NIIT");
+		user.setId("admin");
+		user.setPassword("admin");
 		user.setAdmin(true);
 		
 		

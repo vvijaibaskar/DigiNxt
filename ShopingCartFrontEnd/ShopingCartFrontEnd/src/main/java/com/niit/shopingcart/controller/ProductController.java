@@ -2,6 +2,7 @@ package com.niit.shopingcart.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -88,5 +89,24 @@ public class ProductController {
 		model.addAttribute("supplierList", this.supplierDAO.list());
 	
 		return "product";
+	}
+	
+	@RequestMapping("product/get/{id}")
+	public String getSelectedProduct(@PathVariable("id") String id, Model model) {
+		String s="go";
+		if(!s.equals(id))
+		{
+			System.out.println("getSelectedProduct");
+			model.addAttribute("selectedProduct", this.productDAO.get(id));
+			model.addAttribute("categoryList", this.categoryDAO.list());
+			return "/list";	
+		}
+		return "home";
+	}
+
+	@RequestMapping( "/home")
+	public String home() {
+		System.out.println(" hi");
+		return "home";
 	}
 }

@@ -79,7 +79,7 @@
       <ul class="nav navbar-nav navbar-right">
        <li><a href="#" class="bg-danger">Accessories</a></li>
          <li><a href="#"class= "bg-info">Lucky Draw</a></li>
-		<li><a href="index.jsp" class="btn btn-default" role="button">Home</a></li>
+		<li><a href="go" class="btn btn-default" role="button">Home</a></li>
         <li><a href="login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>

@@ -12,19 +12,27 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.shopingcart.dao.CategoryDAO;
 import com.niit.shopingcart.model.Category;
 
 
-
+@SessionAttributes({ "table" })  // will remove ,   ???
 @Controller
 public class CategoryController {
 
+	@Autowired
 	private CategoryDAO categoryDAO;
 	
-	@Autowired(required=true)
+	@RequestMapping(value = "/onLoad", method = RequestMethod.GET)
+	public String onLoad(Model model) {
+		model.addAttribute("category", new Category());
+		model.addAttribute("categoryList", this.categoryDAO.list());
+		return "/home";
+	}
+	
 	@Qualifier(value="categoryDAO")
 	public void setCategoryDAO(CategoryDAO ps){
 		this.categoryDAO = ps;

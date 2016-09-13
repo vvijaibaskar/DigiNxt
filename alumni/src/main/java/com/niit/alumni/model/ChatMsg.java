@@ -18,19 +18,17 @@ public class ChatMsg {
 	@Column(name="id")
 	private String id;
 	private String usrId;
-	private String fromUsr;
-	private String toUsr;
-	private Date dateAndTime;
-	
-	public Date getDateAndTime() {
-		return dateAndTime;
-	}
-	public void setDateAndTime(Date dateAndTime) {
-		this.dateAndTime = dateAndTime;
-	}
-	private String title;
+	private Date   chatDateTime;
+	private String toUsrId;
 	private String content;
-	private Boolean approved;
+	
+	
+	public Date getChatDateTime() {
+		return chatDateTime;
+	}
+	public void setChatDateTime(Date chatDateTime) {
+		this.chatDateTime = chatDateTime;
+	}
 	public String getId() {
 		return id;
 	}
@@ -43,24 +41,15 @@ public class ChatMsg {
 	public void setUsrId(String usrId) {
 		this.usrId = usrId;
 	}
-	public String getFromUsr() {
-		return fromUsr;
-	}
-	public void setFromUsr(String fromUsr) {
-		this.fromUsr = fromUsr;
-	}
-	public String getToUsr() {
-		return toUsr;
-	}
-	public void setToUsr(String toUsr) {
-		this.toUsr = toUsr;
-	}
 
-	public String getTitle() {
-		return title;
+	
+	
+
+	public String getToUsrId() {
+		return toUsrId;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setToUsrId(String toUsrId) {
+		this.toUsrId = toUsrId;
 	}
 	public String getContent() {
 		return content;
@@ -68,12 +57,6 @@ public class ChatMsg {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Boolean getApproved() {
-		return approved;
-	}
-	public void setApproved(Boolean approved) {
-		this.approved = approved;
-	}
-	
+
 
 }

@@ -62,6 +62,21 @@ public class Blog {
 	@Column(unique = true)
 	private String blogName;
 	private String contents;
+	private char status;
+	private String reason;
+
+	public char getStatus() {
+		return status;
+	}
+	public void setStatus(char status) {
+		this.status = status;
+	}
+	public String getReason() {
+		return reason;
+	}
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
 	
 	
 }

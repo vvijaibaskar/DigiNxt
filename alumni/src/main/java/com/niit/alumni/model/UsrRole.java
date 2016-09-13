@@ -1,7 +1,16 @@
 package com.niit.alumni.model;
 
-public class UsrRole {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table(name = "USRROLE")
+@Component
+public class UsrRole {
+	@Id
 	private String usrId;
 	private int roleId;
 	

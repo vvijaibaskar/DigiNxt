@@ -27,12 +27,12 @@ public class Event {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getEventDate() {
+/*	public Date getEventDate() {
 		return eventDate;
 	}
 	public void setEventDate(Date eventDate) {
 		this.eventDate = eventDate;
-	}
+	}*/
 	public String getVenue() {
 		return venue;
 	}
@@ -46,7 +46,7 @@ public class Event {
 		this.description = description;
 	}
 	public String name;
-	public Date eventDate;
-	public String venue;
+/*	public Date eventDate;
+*/	public String venue;
 	public String description;
 }

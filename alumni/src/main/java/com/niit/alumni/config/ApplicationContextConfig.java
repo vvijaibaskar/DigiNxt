@@ -17,9 +17,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.niit.alumni.model.Blog;
 import com.niit.alumni.model.ChatMsg;
 import com.niit.alumni.model.Event;
+import com.niit.alumni.model.Friends;
 import com.niit.alumni.model.Job;
 import com.niit.alumni.model.Role;
 import com.niit.alumni.model.Usr;
+import com.niit.alumni.model.UsrRole;
 
 @Configuration
 @ComponentScan("com.niit.alumni")
@@ -58,7 +60,9 @@ public class ApplicationContextConfig {
 	    	sessionBuilder.addAnnotatedClasses(Blog.class);
 	    	sessionBuilder.addAnnotatedClasses(Event.class);
 	    	sessionBuilder.addAnnotatedClasses(Job.class);
-	    	return sessionBuilder.buildSessionFactory();
+	    	sessionBuilder.addAnnotatedClasses(Friends.class);
+	    	sessionBuilder.addAnnotatedClasses(UsrRole.class);
+	    	    	return sessionBuilder.buildSessionFactory();
 	    }
 	    
 	    @Autowired

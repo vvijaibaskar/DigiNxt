@@ -1,5 +1,7 @@
 package com.niit.alumni.test;
 
+import java.util.Date;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.alumni.dao.ChatDAO;
@@ -17,7 +19,11 @@ public class ChatMsgTest {
 	ChatMsg cm =(ChatMsg)context.getBean("chatMsg");
 	
 	ChatDAO chatDAO = (ChatDAO)context.getBean("chatDAO");
-	cm.setId("USR001");
+	cm.setId("C0002");
+	cm.setUsrId("USR002");
+	cm.setToUsrId("USR001");
+	cm.setContent("I am fine");
+	cm.setChatDateTime(new Date());
 	chatDAO.saveOrUpdate(cm);
 
 	}

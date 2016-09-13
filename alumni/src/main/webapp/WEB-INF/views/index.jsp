@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -93,29 +93,26 @@
 
     </header>
 
-    <!-- Portfolio Grid Section -->
+   <!-- Portfolio Grid Section -->
     <section id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>EVENTS</h2>
+                    <h2>PHOTO GALLERY</h2>
                     <hr class="star-primary">
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
+                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                       <img  src="<c:url value="/resources/img/gradutaing.jpg"/>"  class="img-responsive" alt="">
-
- <%--                        <img src="<c:url value="/resources/img/portfolio/cabin.png"/>" class="img-responsive" alt="">
- --%>
-                    </a>
-                </div>
+                      <img class="img-responsive" src="<c:url value="/resources/img/group.png"/>" alt="">
+                   </a>
+                </div> 
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -123,8 +120,9 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
-                    </a>
+  				 <img class="img-responsive" src="<c:url value="/resources/img/gap-2011.jpg"/>" alt="">
+                   
+               </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
@@ -133,9 +131,12 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
+                        <img class="img-responsive" src="<c:url value="/resources/img/conference.jpg"/>" alt="">
                     </a>
                 </div>
+               </div> 
+                
+                 <div class="row"> 
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
@@ -143,7 +144,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
+                        <img src="<c:url value="/resources/img/reunion2015.jpg"/>" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -153,7 +154,7 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
+                        <img src="<c:url value="/resources/img/reunionpicnic2014.jpg"/>" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -163,9 +164,9 @@
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
+                        <img src="<c:url value="/resources/img/bubbles.jpg"/>" class="img-responsive" alt="">
                     </a>
-                </div>
+                </div> 
             </div>
         </div>
     </section>
@@ -549,4 +550,123 @@ We recognise the necessity of making mistakes and risk-taking when it contribute
 
 </body>
 
+</html> --%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+  <head>  
+    <title>AngularJS $http Example</title>  
+    <style>
+      .username.ng-valid {
+          background-color: lightgreen;
+      }
+      .username.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .username.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+
+      .email.ng-valid {
+          background-color: lightgreen;
+      }
+      .email.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .email.ng-dirty.ng-invalid-email {
+          background-color: yellow;
+      }
+
+    </style>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+     <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+  </head>
+  <body ng-app="myApp" class="ng-cloak">
+      <div class="generic-container" ng-controller="UserController as ctrl">
+          <div class="panel panel-default">
+              <div class="panel-heading"><span class="lead">User Registration Form </span></div>
+              <div class="formcontainer">
+                  <form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
+                      <input type="hidden" ng-model="ctrl.user.id" />
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Name</label>
+                              <div class="col-md-7">
+                                  <input type="text" ng-model="ctrl.user.username" name="uname" class="username form-control input-sm" placeholder="Enter your name" required ng-minlength="3"/>
+                                  <div class="has-error" ng-show="myForm.$dirty">
+                                      <span ng-show="myForm.uname.$error.required">This is a required field</span>
+                                      <span ng-show="myForm.uname.$error.minlength">Minimum length required is 3</span>
+                                      <span ng-show="myForm.uname.$invalid">This field is invalid </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                        
+                      
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Address</label>
+                              <div class="col-md-7">
+                                  <input type="text" ng-model="ctrl.user.address" class="form-control input-sm" placeholder="Enter your Address. [This field is validation free]"/>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Email</label>
+                              <div class="col-md-7">
+                                  <input type="email" ng-model="ctrl.user.email" name="email" class="email form-control input-sm" placeholder="Enter your Email" required/>
+                                  <div class="has-error" ng-show="myForm.$dirty">
+                                      <span ng-show="myForm.email.$error.required">This is a required field</span>
+                                      <span ng-show="myForm.email.$invalid">This field is invalid </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="form-actions floatRight">
+                              <input type="submit"  value="{{!ctrl.user.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+                              <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset Form</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+          <div class="panel panel-default">
+                <!-- Default panel contents -->
+              <div class="panel-heading"><span class="lead">List of Users </span></div>
+              <div class="tablecontainer">
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                              <th>ID.</th>
+                              <th>Name</th>
+                              <th>Phone</th>
+                              <th>Email</th>
+                              <th width="20%"></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr ng-repeat="u in ctrl.users">
+                              <td><span ng-bind="u.id"></span></td>
+                              <td><span ng-bind="u.name"></span></td>
+                              <td><span ng-bind="u.phone"></span></td>
+                              <td><span ng-bind="u.email"></span></td>
+                              <td>
+                              <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button>  <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+      <script src="<c:url value='/static/js/app.js' />"></script>
+      <script src="<c:url value='/static/js/service/user_service.js' />"></script>
+      <script src="<c:url value='/static/js/controller/user_controller.js' />"></script>
+  </body>
 </html>

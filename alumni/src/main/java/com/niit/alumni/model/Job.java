@@ -13,30 +13,25 @@ public class Job {
 	@Id
 	private String id;
 	private String jobTitle;
-	private String compName;
 	private String jobDesc;
-	private int noOfVacancies;
-	private String location;
 	private int expReqd;
-	private String compDesc;
 	private String contactNo;
-	private String contactEmail;
-	private String webSite;
+	private char status;
 	
+	public char getStatus() {
+		return status;
+	}
+
+	public void setStatus(char status) {
+		this.status = status;
+	}
+
 	public String getId() {
 		return id;
 	}
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getCompName() {
-		return compName;
-	}
-
-	public void setCompName(String compName) {
-		this.compName = compName;
 	}
 
 	public String getJobTitle() {
@@ -54,37 +49,12 @@ public class Job {
 	public void setJobDesc(String jobDesc) {
 		this.jobDesc = jobDesc;
 	}
-
-	public int getNoOfVacancies() {
-		return noOfVacancies;
-	}
-
-	public void setNoOfVacancies(int noOfVacancies) {
-		this.noOfVacancies = noOfVacancies;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
 	public int getExpReqd() {
 		return expReqd;
 	}
 
 	public void setExpReqd(int expReqd) {
 		this.expReqd = expReqd;
-	}
-
-	public String getCompDesc() {
-		return compDesc;
-	}
-
-	public void setCompDesc(String compDesc) {
-		this.compDesc = compDesc;
 	}
 
 	public String getContactNo() {
@@ -94,23 +64,5 @@ public class Job {
 	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
-
-	public String getContactEmail() {
-		return contactEmail;
-	}
-
-	public void setContactEmail(String contactEmail) {
-		this.contactEmail = contactEmail;
-	}
-
-	public String getWebSite() {
-		return webSite;
-	}
-
-	public void setWebSite(String webSite) {
-		this.webSite = webSite;
-	}
-
-	
 
 }

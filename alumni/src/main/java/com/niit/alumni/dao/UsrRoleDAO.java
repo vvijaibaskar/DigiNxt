@@ -6,12 +6,13 @@ import com.niit.alumni.model.UsrRole;
 
 
 public interface UsrRoleDAO {
-
 	public List<UsrRole> list();
 
-	public UsrRole get(int id);
+	public UsrRole get(String id);
 	
+	public UsrRole getByName(String name);
+
 	public void saveOrUpdate(UsrRole usrRole);
 
-	public void delete(int id);
+	public void delete(String id);
 }

@@ -20,15 +20,11 @@ public class JobTest {
 
 	j.setId("J0002");
 	j.setJobTitle("Java Programmer");
-	j.setCompName("NIITLtd");
-	j.setJobDesc("The programmer has to develop frontend and backend for NIIT website");
-	j.setNoOfVacancies(5);
-	j.setLocation("Bangalore");
+	j.setJobDesc("The programmer has to develop frontend and backend for XYZ company situated in Bangalore.");
 	j.setExpReqd(2);
-	j.setCompDesc("NIIT is giving training for students and developing software for more than 20 years");
 	j.setContactNo("9999999999");
-	j.setContactEmail("contact@niit.com");
-	j.setWebSite("www.niit.com");
+	j.setStatus('N');
 	jobDAO.saveOrUpdate(j);
 	}
+	
 }

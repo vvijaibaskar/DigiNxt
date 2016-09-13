@@ -13,14 +13,13 @@ import com.niit.alumni.model.UsrRole;
 
 
 @Repository("usrRoleDAO")
-public class UsrRoleDAOImpl {
+public class UsrRoleDAOImpl implements UsrRoleDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
 	public UsrRoleDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-
 	@Transactional
 	public List<UsrRole> list() {
 		
@@ -31,21 +30,22 @@ public class UsrRoleDAOImpl {
 
 		return listUsrRoles;
 	}
+	
 	@Transactional
 	public void saveOrUpdate(UsrRole usrRole) {
 		sessionFactory.getCurrentSession().saveOrUpdate(usrRole);
 	}
 	
 	@Transactional
-	public void delete(String usrId) {
+	public void delete(String id) {
 		UsrRole UsrRoleToDelete = new UsrRole();
-		UsrRoleToDelete.setUsrId(usrId);
+		UsrRoleToDelete.setUsrId(id);
 	
 		sessionFactory.getCurrentSession().delete(UsrRoleToDelete);
 	}
 	@Transactional
-	public UsrRole get(String usrId) {
-		String hql = "from UsrRole where usrId=" + "'"+ usrId +"'" ;
+	public UsrRole get(String id) {
+		String hql = "from UsrRole where id=" + "'" + id +"'" ;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		@SuppressWarnings("unchecked")
@@ -57,7 +57,18 @@ public class UsrRoleDAOImpl {
 		
 		return null;
 	}
-	
+	@Transactional
+	public UsrRole getByName(String usrId) {
+		String hql = "from UsrRole where usrId=" + "'"+ usrId +"'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<UsrRole> listUsrRole = (List<UsrRole>) query.list();
+		
+		if (listUsrRole != null && !listUsrRole.isEmpty()) {
+			return listUsrRole.get(0);
+		}
+		
+		return null;
 	}
-
-
+}

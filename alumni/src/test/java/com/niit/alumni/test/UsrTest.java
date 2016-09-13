@@ -39,9 +39,19 @@ public class UsrTest {
 	u3.setPhone("6622334455");
 	u3.setEmail("abc@vijai.com");
 	u3.setNiitRollNo("afdadf");
-	u3.setYearOfJoin(2018);
+	u3.setYearOfJoin(2015);
 	u3.setStatus('N');
-	usrDAO.saveOrUpdate(u2);
-	}
+	usrDAO.saveOrUpdate(u3);
+
+	Usr u4 =(Usr)context.getBean("usr");
+	u4.setId("USR023");
+	u4.setName("def");
+	u4.setPassword("def");
+	u4.setPhone("2233445566");
+	u4.setEmail("def@vijai.com");
+	u4.setNiitRollNo("defdef");
+	u4.setYearOfJoin(2015);
+	u4.setStatus('N');
+	usrDAO.saveOrUpdate(u4);}
 
 }
